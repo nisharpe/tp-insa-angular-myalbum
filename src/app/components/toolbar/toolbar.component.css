@@ -1,0 +1,9 @@
+a {
+  color: white;
+  padding: 2em;
+}
+
+.active {
+  font-size: 150%;
+  text-decoration: underline;
+}

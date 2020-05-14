@@ -1,0 +1,16 @@
+<div class="card" (click)="modal.style.display = 'block'">
+  <h1 *ngIf="!player?.image">{{ player?.id }}</h1>
+  <img *ngIf="!!player?.image" [src]="player.image" [alt]="player.image" height="200" width="200">
+</div>
+<div>
+  <p>{{ player?.name }}</p>
+</div>
+
+<div [id]="'player-' + player?.id" class="modal" #modal>
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" (click)="modal.style.display = 'none'">&times;</span>
+    <span>URL de l'image obtenue :</span>
+    <input type="url" (keydown.enter)="addImage($event.target.value); modal.style.display = 'none'">
+  </div>
+</div>
